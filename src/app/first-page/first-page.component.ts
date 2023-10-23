@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-page',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./first-page.component.css']
 })
 export class FirstPageComponent {
+  
+  constructor(
+    private router: Router
+  ) {}
 
+  goToSecondPage(){
+    this.router.navigate(["second-page"])
+  }
 }
