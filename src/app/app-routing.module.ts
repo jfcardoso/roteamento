@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: "second-page", component: SecondPageComponent},
   {path: "", redirectTo: "first-page", pathMatch: "full"},
   {path: "page-with-parameter/:id", component: PageWithParameterComponent},
+  { path: 'lazy-module', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule) },
   {path: "**", component: PageNotFoundComponent}
 ]
 
